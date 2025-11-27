@@ -26,7 +26,7 @@ Project ini mengintegrasikan **Google Gemini AI** untuk otomatisasi cerdas (Auto
 * **MVC Pattern:** Kode terstruktur rapi (Models, Views, Controllers).
 * **Advanced Querying:** Mendukung Search, Filtering, Sorting, dan Pagination.
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Runtime:** Node.js
 * **Framework:** Express.js
 * **Database:** Supabase (PostgreSQL)
