@@ -1,0 +1,17 @@
+# Dependencies (Wajib)
+node_modules/
+
+# Environment Variables 
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Junk Files (Mac)
+.DS_Store
+
+# OS Junk Files (Windows)
+Thumbs.db
+Desktop.ini
