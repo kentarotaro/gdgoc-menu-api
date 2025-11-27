@@ -15,7 +15,7 @@ Project ini mengintegrasikan **Google Gemini AI** untuk otomatisasi cerdas (Auto
 * **Auto-Description:** Otomatis membuat deskripsi menu yang menggugah selera jika user tidak mengisinya.
 * **Nutrition Analyst:** Mengestimasi kalori berdasarkan nama menu dan bahan.
 * **Smart Pricing:** Memberikan rekomendasi harga jual berdasarkan analisis HPP bahan baku.
-* **Sanity Check:** Sistem proteksi untuk menolak input tidak masuk akal (misal: "Tumis Batu") agar database tetap bersih.
+* **Sanity Check:** Sistem proteksi untuk menolak input tidak masuk akal (misal: "Semen Tiga Roda") agar database tetap bersih.
 
 ### 2. Security & Reliability
 * **Custom Rate Limiter:** Mencegah spamming pada endpoint AI.
@@ -30,7 +30,7 @@ Project ini mengintegrasikan **Google Gemini AI** untuk otomatisasi cerdas (Auto
 * **Runtime:** Node.js
 * **Framework:** Express.js
 * **Database:** Supabase (PostgreSQL)
-* **AI:** Google Gemini 1.5 Flash
+* **AI:** Google Gemini 2.5 Flash
 * **Deployment:** Vercel
 
 ##  Cara Menjalankan di Lokal
