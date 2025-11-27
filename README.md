@@ -37,7 +37,7 @@ Project ini mengintegrasikan **Google Gemini AI** untuk otomatisasi cerdas (Auto
 
 1.  **Clone Repository**
     ```bash
-    git clone [https://github.com/username-kamu/nama-repo.git](https://github.com/username-kamu/nama-repo.git)
+    git clone https://github.com/kentarotaro/gdgoc-menu-api.git
     ```
 2.  **Install Dependencies**
     ```bash
