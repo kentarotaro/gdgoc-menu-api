@@ -535,12 +535,20 @@ exports.createMenu = async (req, res) => {
     }
 };
 
-// 3. GET DETAIL MENU (GET /menu/:id)
+// 3. GET DETAIL MENU (GET /menu/:id) 
 exports.getMenuById = async (req, res) => {  
     try {
         const id = parseInt(req.params.id);
 
-        //  Query by ID dari Supabase
+        // Validasi ID
+        if (isNaN(id) || id <= 0) {
+            return res.status(400).json({ 
+                success: false, 
+                message: "ID menu tidak valid" 
+            });
+        }
+
+        // Query by ID dari Supabase
         const { data, error } = await supabase
             .from('menus')
             .select('*')
@@ -554,25 +562,29 @@ exports.getMenuById = async (req, res) => {
             });
         }
 
+        //  SANITIZE DATA SEBELUM RESPONSE
+        const cleanData = sanitizeMenu(data);
+
         res.status(200).json({
             success: true,
             message: "Berhasil mengambil detail menu",
-            data: data
+            data: cleanData  // ← Sekarang konsisten!
         });
     } catch (error) {
         res.status(500).json({ 
             success: false, 
-            message: error.message 
+            message: "Gagal mengambil detail menu",
+            error: error.message 
         });
     }
 };
 
-// 4. UPDATE MENU (PUT /menu/:id)
+// 4. UPDATE MENU (PUT /menu/:id) 
 exports.updateMenu = async (req, res) => { 
     try {
         const id = parseInt(req.params.id);
 
-        //  Update di Supabase
+        // Update di Supabase
         const { data, error } = await supabase
             .from('menus')
             .update({
@@ -590,15 +602,19 @@ exports.updateMenu = async (req, res) => {
             });
         }
 
+        //  Sanitize response
+        const cleanData = sanitizeMenu(data);
+
         res.status(200).json({
             success: true,
             message: "Menu berhasil diupdate",
-            data: data
+            data: cleanData  // ← Konsisten!
         });
     } catch (error) {
         res.status(500).json({ 
             success: false, 
-            message: error.message 
+            message: "Gagal update menu",
+            error: error.message 
         });
     }
 };
